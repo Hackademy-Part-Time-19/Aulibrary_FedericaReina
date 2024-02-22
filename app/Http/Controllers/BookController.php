@@ -30,8 +30,24 @@ class BookController extends Controller
      */
     public function store(BookStoreRequest $request)
     {
-        Book::create($request->validated());
+        $book = Book::create($request->validated());
 
+     
+
+        if($request->hasFile('image')){
+
+            $path = 'public/images';
+
+            $name = $book['id'] . 'cover' . '.' . $request->file('image')->extension();
+ 
+            $file = $request->file('image')->storeAs($path, $name);
+                
+            $image= $path . '/' . $name;
+
+            $book->image = $image;
+            $book->save();
+        }
+        
         return redirect()->back()->with(['success'=>'Book successfully entered']);
     }
 
