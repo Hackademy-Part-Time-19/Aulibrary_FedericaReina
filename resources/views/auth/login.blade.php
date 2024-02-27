@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 style="text-align: center">Login</h1>
+    <h1 style="text-align: center; margin-bottom:40px"><b>Login</b></h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mx-auto">
@@ -17,7 +17,7 @@
                     @error('email') <span class="text-danger">{{$message}}</span> 
                     @enderror
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button class="buttonPrimary" type="submit">Login</button>
 
                 </form>
             </div>

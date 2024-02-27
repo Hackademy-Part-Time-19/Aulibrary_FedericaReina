@@ -30,9 +30,8 @@ class BookController extends Controller
      */
     public function store(BookStoreRequest $request)
     {
-        $book = Book::create($request->validated());
-
-     
+        $validated= $request->validated();
+        $book= Book::create(['user_id'=>auth()->user()->id, 'title'=>$validated['title'], 'author'=>$validated['author'], 'description'=>$validated['description'],'price'=>$validated['price']]);
 
         if($request->hasFile('image')){
 
@@ -64,7 +63,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.edit', compact('book'));
     }
 
     /**
@@ -72,7 +71,8 @@ class BookController extends Controller
      */
     public function update(BookStoreRequest $request, Book $book)
     {
-        $book->update($request->validated());
+        $validated= $request->validated();
+        $book->update(['user_id'=>auth()->user()->id, 'title'=>$validated['title'], 'author'=>$validated['author'], 'description'=>$validated['description'],'price'=>$validated['price']]);
         return redirect()->back()->with(['success'=>'Book successfully updated']);
     }
 
@@ -82,5 +82,11 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         $book->delete();
+        return redirect()->back()->with(['delete'=>'Book successfully deleted']);
+    }
+
+    public function userBooks(){
+        $books = auth()->user()->books;
+        return view ('user.books', compact('books'));
     }
 }

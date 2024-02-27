@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 style="text-align: center">Register</h1>
+    <h1><b>Register</b></h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mx-auto">
@@ -12,7 +12,7 @@
                     @error('name') <span class="text-danger">{{$message}}</span> @enderror
 
                     <div class='mb-3'>
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label" style="font-size: 15pt">Email</label>
                         <input type="email" name="email" class="form-control" id='email'>
                     </div>
                     @error('email') <span class="text-danger">{{$message}}</span> @enderror
@@ -28,7 +28,7 @@
                         <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button class="buttonPrimary" type="submit">Register</button>
 
                 </form>
             </div>

@@ -1,1 +1,145 @@
 @import 'bootstrap';
+
+body {
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.background-left, .background-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.buttonPrimary {
+    padding: 8px 16px;
+    border-radius: 7px;
+    border: unset;
+    color: #ffffff;
+    z-index: 1;
+    background: #000000;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 3px 6px 14px -2px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.buttonPrimary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 7px;
+    background-color: #f3d113;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+.buttonPrimary:hover {
+    color: #000000;
+}
+
+.buttonPrimary:hover::before {
+    width: 100%;
+}
+
+.buttonSecondary {
+    padding: 8px 16px;
+    border-radius: 7px;
+    color: #000000;
+    z-index: 1;
+    background: #ffffff;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 3px 6px 8px -2px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.buttonSecondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 7px;
+    background-color: #f3d113;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 8px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+.buttonSecondary:hover {
+    color: #000000;
+}
+
+.buttonSecondary:hover::before {
+    width: 100%;
+}
+
+
+.buttonDelete {
+    padding: 8px 16px;
+    border-radius: 7px;
+    border: unset;
+    color: #ffffff;
+    z-index: 1;
+    background: #c50000;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 3px 6px 8px -2px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+}
+
+.buttonDelete::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 7px;
+    border: solid #c50000;
+    background-color: #ffffff;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 8px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+}
+
+.buttonDelete:hover {
+    color: #000000;
+}
+
+.buttonDelete:hover::before {
+    width: 100%;
+}
+
+
+
+.buttonDelete {
+
+
+}
